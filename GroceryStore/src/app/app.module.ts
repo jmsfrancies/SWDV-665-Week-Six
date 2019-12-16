@@ -1,3 +1,4 @@
+/*app.module.ts*/
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
@@ -10,6 +11,10 @@ import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { GroceriesServiceProvider } from '../providers/groceries-service/groceries-service';
+import { InputDialogServiceProvider } from '../providers/input-dialog-service/input-dialog-service';
+import { SocialSharing } from '@ionic-native/social-sharing';
+import { GroceriesServicesProvider } from '../providers/groceries-services/groceries-services';
 
 @NgModule({
   declarations: [
@@ -34,7 +39,13 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    GroceriesServiceProvider,
+    InputDialogServiceProvider,
+    SocialSharing,
+    GroceriesServicesProvider,
+    InputDialogServiceProvider
   ]
 })
 export class AppModule {}
+
